@@ -1,0 +1,12 @@
+<md-toolbar color="primary">
+  <span>Enterprise Name</span>
+  <span class="spacer"></span>
+  <button md-raised-button class="login-btn" (click)="this.toggle_login_clicked.emit()">
+    <div *ngIf="showLogin">
+      Login
+    </div>
+    <div *ngIf="!showLogin">
+      Signup
+    </div>
+  </button>
+</md-toolbar>

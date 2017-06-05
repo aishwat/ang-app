@@ -5,16 +5,42 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule} from '@angular/material';
+import {MdIconRegistry} from '@angular/material';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { LandingComponent } from './landing/landing.component';
+import { HeaderLandingComponent } from './header-landing/header-landing.component';
+import { HomeComponent } from './home/home.component';
+
+import { RouterModule }   from '@angular/router';
+import {AppRoutingModule} from './app-routing.module'
+
+import { AuthService } from './services/auth/auth.service';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent,
+    SignupComponent,
+    LandingComponent,
+    HeaderLandingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

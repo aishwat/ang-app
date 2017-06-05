@@ -1,0 +1,32 @@
+
+.main-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.sidenav{
+  padding: 0px;
+  /*width:300px;*/
+}
+.container{}
+
+.user-avatar {
+  background-image: url('../../assets/shiba1.jpg');
+  background-size: cover;
+}
+.user-name{
+  align-self: center;
+}
+.user-email{
+  padding-top: 15px;
+}
+.mat-nav-list{
+  padding-top: 0px;
+}
+[hidden] {
+   display: none;
+}
+md-sidenav{
+  min-width: 300px !important;
+}

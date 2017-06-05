@@ -1,0 +1,6 @@
+<app-header-landing [showLogin]="showLogin" (toggle_login_clicked)="toggleLogin()"></app-header-landing>
+
+<app-login class="card" *ngIf="!showLogin"></app-login>
+<app-signup class="card" *ngIf="showLogin"></app-signup>
+
+<app-footer></app-footer>

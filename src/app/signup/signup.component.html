@@ -1,0 +1,29 @@
+<md-card class="signup-card">
+  <md-card-title  class="full-width">Signup</md-card-title>
+  <form class="signup-form" #signupForm="ngForm" (ngSubmit)="onSubmit()">
+    <md-input-container class="full-width margin-bottom">
+          <input mdInput placeholder="First Name" type="text" [(ngModel)]="user.firstname" name="firstname">
+          <!-- <md-error>Firstname is required.</md-error> -->
+    </md-input-container>
+    <md-input-container  class="full-width margin-bottom">
+          <input mdInput placeholder="Last name" type="text" [(ngModel)]="user.lastname" name="lastname">
+          <!-- <md-error>Lastname is required.</md-error> -->
+    </md-input-container>
+    <md-input-container  class="full-width margin-bottom">
+          <input mdInput placeholder="Email" type="email" required email [(ngModel)]="user.email" name="name" #email="ngModel">
+          <md-error [hidden]="email.pristine || email.valid">
+              <span [hidden]="email.errors?.required || !email.errors?.email">
+                  This doesn't appear to be a valid email address.
+              </span>
+              <span [hidden]="!email.errors?.required">Email address is required.</span>
+          </md-error>
+    </md-input-container>
+    <md-input-container  class="full-width margin-bottom">
+          <input mdInput placeholder="Password" type="password" required minlength="5" [(ngModel)]="user.password" name="password" #password>
+          <md-hint align="end">{{password.value.length}} / 5</md-hint>
+          <md-error>Please enter a valid password</md-error>
+    </md-input-container>
+    <br/>
+    <button type="submit" md-raised-button color="primary" class="full-width signup-btn" [disabled]="!signupForm.form.valid || submitted">Signup</button>
+  </form>
+</md-card>

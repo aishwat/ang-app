@@ -1,0 +1,9 @@
+.footer{
+  position:fixed;
+  bottom:0;
+  max-height: 20px;
+  height: 20px;
+}
+.mat-toolbar {
+    min-height: 20px!important;
+}

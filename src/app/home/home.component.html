@@ -1,0 +1,47 @@
+<md-sidenav-container class="container" fullscreen>
+
+  <md-sidenav #sidenav class="sidenav" mode="over" opened>
+      <md-nav-list>
+             <md-card class="user-card">
+                 <md-card-header>
+                   <div md-card-avatar class="user-avatar"></div>
+                   <md-card-title>{{user.firstname}} {{user.lastname}}</md-card-title>
+                   <md-card-subtitle>{{user.email}}</md-card-subtitle>
+                   <!-- <div class="user-name">
+                     Frank Underwood
+                   </div> -->
+                 </md-card-header>
+                 <!-- <md-card-content class="user-email">abc@gmail.com</md-card-content> -->
+             </md-card>
+      <md-divider></md-divider>
+            <md-list>
+                <div  *ngFor="let category of practice_categories">
+                    <md-list-item (click)="onSelect(category.category)">
+                      <a md-line>{{category.category}}</a>
+                        <md-icon *ngIf="selectedCategory!=category.category">arrow_drop_down</md-icon>
+                        <md-icon *ngIf="selectedCategory==category.category">arrow_drop_up</md-icon>
+                    </md-list-item>
+                    <md-list style="margin-left:30px;" *ngIf="selectedCategory==category.category">
+                          <div *ngFor="let subcategory of category.subcategories">
+                            <md-list-item>{{ subcategory.subcategory }}</md-list-item>
+                          </div>
+                    </md-list>
+                </div>
+            </md-list>
+      </md-nav-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.open()">
+        <md-icon>menu</md-icon>
+    </button>
+    Angular Material Demos
+  </md-toolbar>
+
+  <div class="main-content">
+    <button md-button (click)="sidenav.open()">
+      Main content
+    </button>
+  </div>
+
+</md-sidenav-container>
