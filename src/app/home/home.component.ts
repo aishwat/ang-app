@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from '../models/user';
 import {PracticeCategories} from '../mock/practice-categories';
 import {Category} from '../models/category';
+import {Subcategory} from '../models/subcategory';
 
 @Component({
   selector: 'app-home',
@@ -14,11 +15,17 @@ export class HomeComponent implements OnInit {
   practice_categories:Category[] = PracticeCategories;
 
   selectedCategory:string;
-  onSelect(category:string):void{
+  selectedSubcategory:Subcategory = PracticeCategories[0].subcategories[0];//for test
+
+  onSelectCategory(category:string):void{
     if(this.selectedCategory == category)
         this.selectedCategory=null;
     else
         this.selectedCategory = category;
+  }
+  onSelectSubcategory(subcategory:Subcategory):void{
+    this.selectedSubcategory = subcategory;
+    console.log(this.selectedSubcategory);
   }
 
   constructor() { }

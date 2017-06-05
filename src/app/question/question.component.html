@@ -1,0 +1,6 @@
+<md-card class="question-card">
+  <button md-raised-button class="question" [disableRipple]="true">{{question.question}} </button>
+  <div *ngFor="let option of question.options">
+      <button md-raised-button class="option" (click)="optionClicked(option)" [class.wrong]="(option === selectedOption) && !option.isAns" [class.correct]="selectedOption && option.isAns">{{option.option}} </button>
+  </div>
+</md-card>

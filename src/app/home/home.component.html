@@ -1,6 +1,6 @@
 <md-sidenav-container class="container" fullscreen>
 
-  <md-sidenav #sidenav class="sidenav" mode="over" opened>
+  <md-sidenav #sidenav class="sidenav" mode="over" >
       <md-nav-list>
              <md-card class="user-card">
                  <md-card-header>
@@ -16,16 +16,19 @@
       <md-divider></md-divider>
             <md-list>
                 <div  *ngFor="let category of practice_categories">
-                    <md-list-item (click)="onSelect(category.category)">
+                    <md-list-item (click)="onSelectCategory(category.category)">
                       <a md-line>{{category.category}}</a>
                         <md-icon *ngIf="selectedCategory!=category.category">arrow_drop_down</md-icon>
                         <md-icon *ngIf="selectedCategory==category.category">arrow_drop_up</md-icon>
                     </md-list-item>
-                    <md-list style="margin-left:30px;" *ngIf="selectedCategory==category.category">
+                    <md-list *ngIf="selectedCategory==category.category">
                           <div *ngFor="let subcategory of category.subcategories">
-                            <md-list-item>{{ subcategory.subcategory }}</md-list-item>
+                            <md-list-item style="padding-left:30px;" (click)="onSelectSubcategory(subcategory)">
+                              {{ subcategory.subcategory }}
+                            </md-list-item>
                           </div>
                     </md-list>
+                    <md-divider></md-divider>
                 </div>
             </md-list>
       </md-nav-list>
@@ -35,13 +38,14 @@
     <button md-icon-button (click)="sidenav.open()">
         <md-icon>menu</md-icon>
     </button>
-    Angular Material Demos
+    Enterprise Name
   </md-toolbar>
 
   <div class="main-content">
     <button md-button (click)="sidenav.open()">
       Main content
     </button>
+    <app-question *ngIf="selectedSubcategory" [question]="selectedSubcategory.questions[0]"></app-question>
   </div>
 
 </md-sidenav-container>

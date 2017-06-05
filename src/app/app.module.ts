@@ -20,6 +20,7 @@ import { RouterModule }   from '@angular/router';
 import {AppRoutingModule} from './app-routing.module'
 
 import { AuthService } from './services/auth/auth.service';
+import { QuestionComponent } from './question/question.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AuthService } from './services/auth/auth.service';
     SignupComponent,
     LandingComponent,
     HeaderLandingComponent,
-    HomeComponent
+    HomeComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
