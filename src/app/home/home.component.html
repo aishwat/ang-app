@@ -1,6 +1,6 @@
 <md-sidenav-container class="container" fullscreen>
 
-  <md-sidenav #sidenav class="sidenav" mode="over" >
+  <md-sidenav #sidenav class="sidenav" mode="over">
       <md-nav-list>
              <md-card class="user-card">
                  <md-card-header>
@@ -14,23 +14,30 @@
                  <!-- <md-card-content class="user-email">abc@gmail.com</md-card-content> -->
              </md-card>
       <md-divider></md-divider>
-            <md-list>
-                <div  *ngFor="let category of practice_categories">
-                    <md-list-item (click)="onSelectCategory(category.category)">
-                      <a md-line>{{category.category}}</a>
-                        <md-icon *ngIf="selectedCategory!=category.category">arrow_drop_down</md-icon>
-                        <md-icon *ngIf="selectedCategory==category.category">arrow_drop_up</md-icon>
-                    </md-list-item>
-                    <md-list *ngIf="selectedCategory==category.category">
-                          <div *ngFor="let subcategory of category.subcategories">
-                            <md-list-item style="padding-left:30px;" (click)="onSelectSubcategory(subcategory)">
-                              {{ subcategory.subcategory }}
-                            </md-list-item>
-                          </div>
-                    </md-list>
-                    <md-divider></md-divider>
-                </div>
-            </md-list>
+      <!-- <md-card style="padding:0px;"> -->
+              <md-list>
+                  <md-divider></md-divider>
+                  <div  *ngFor="let category of practice_categories">
+                      <md-list-item (click)="onSelectCategory(category.category)">
+                        <a md-line>{{category.category}}</a>
+                          <md-icon *ngIf="selectedCategory!=category.category">arrow_drop_down</md-icon>
+                          <md-icon *ngIf="selectedCategory==category.category">arrow_drop_up</md-icon>
+                      </md-list-item>
+                      <md-list *ngIf="selectedCategory==category.category">
+                            <div *ngFor="let subcategory of category.subcategories">
+                              <md-list-item style="padding-left:30px;" (click)="onSelectSubcategory(subcategory)">
+                                {{ subcategory.subcategory }}
+                              </md-list-item>
+                            </div>
+                      </md-list>
+                      <md-divider></md-divider>
+                  </div>
+              </md-list>
+      <!-- </md-card> -->
+      <md-card style="padding:0px;margin-top:20px;">
+        <md-divider></md-divider>
+          <md-list-item>Show Report</md-list-item>
+      </md-card>
       </md-nav-list>
   </md-sidenav>
 
@@ -45,8 +52,8 @@
     <!-- <button md-button (click)="sidenav.open()">
       Main content
     </button> -->
-    <app-questions-container *ngIf="selectedSubcategory" [subcategory]="selectedSubcategory"></app-questions-container>
-    <!-- <app-question *ngIf="selectedSubcategory" [question]="selectedSubcategory.questions[0]"></app-question> -->
+    <app-report></app-report>
+    <!-- <app-questions-container *ngIf="selectedSubcategory" [subcategory]="selectedSubcategory"></app-questions-container> -->
   </div>
 
 </md-sidenav-container>

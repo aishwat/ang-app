@@ -23,6 +23,7 @@ import { AuthService } from './services/auth/auth.service';
 import { QuestionComponent } from './question/question.component';
 import { QuestionsContainerComponent } from './questions-container/questions-container.component';
 import { MaterialModule } from '@angular/material';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MaterialModule } from '@angular/material';
     HeaderLandingComponent,
     HomeComponent,
     QuestionComponent,
-    QuestionsContainerComponent
+    QuestionsContainerComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
