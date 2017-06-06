@@ -1,9 +1,12 @@
 
 .main-content {
-  display: flex;
+  margin : 50px;
+  /*margin-left: 50px;
+  margin-top:50px;*/
+  /*display: flex;
   height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
 }
 .sidenav{
   padding: 0px;

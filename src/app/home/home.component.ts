@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   practice_categories:Category[] = PracticeCategories;
 
   selectedCategory:string;
-  selectedSubcategory:Subcategory = PracticeCategories[0].subcategories[0];//for test
+  selectedSubcategory:Subcategory;// = PracticeCategories[0].subcategories[0];//for test
 
   onSelectCategory(category:string):void{
     if(this.selectedCategory == category)

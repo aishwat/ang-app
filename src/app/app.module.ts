@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule} from '@angular/material';
+import {MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule} from '@angular/material';
 import {MdIconRegistry} from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -21,6 +21,8 @@ import {AppRoutingModule} from './app-routing.module'
 
 import { AuthService } from './services/auth/auth.service';
 import { QuestionComponent } from './question/question.component';
+import { QuestionsContainerComponent } from './questions-container/questions-container.component';
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -32,15 +34,17 @@ import { QuestionComponent } from './question/question.component';
     LandingComponent,
     HeaderLandingComponent,
     HomeComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuestionsContainerComponent
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule
+    MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

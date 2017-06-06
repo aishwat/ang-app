@@ -1,6 +1,11 @@
 <md-card class="question-card">
-  <button md-raised-button class="question" [disableRipple]="true">{{question.question}} </button>
+
+  <button md-raised-button class="question" color="primary" [disableRipple]="true">
+    {{question.question}}
+    <md-icon class="bookmark-icon" *ngIf="question.markedforreview">bookmark</md-icon>
+  </button>
+
   <div *ngFor="let option of question.options">
-      <button md-raised-button class="option" (click)="optionClicked(option)" [class.wrong]="(option === selectedOption) && !option.isAns" [class.correct]="selectedOption && option.isAns">{{option.option}} </button>
+      <button md-raised-button class="option" (click)="optionClicked(option)" [class.wrong]="(option === selectedOption) && !option.isAns" [class.correct]="(selectedOption && option.isAns)" [class.correct]="question.showanswer && option.isAns">{{option.option}} </button>
   </div>
 </md-card>

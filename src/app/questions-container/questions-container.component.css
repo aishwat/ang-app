@@ -1,0 +1,16 @@
+.questions-container-card{
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+/deep/.mat-tab-label, /deep/.mat-tab-label-active{
+ min-width: 50px!important;
+ padding: 2px!important;
+ margin: 2px!important;
+}
+.footer{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:space-around;
+}

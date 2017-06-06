@@ -1,0 +1,21 @@
+<md-card class="questions-container-card">
+  <!-- {{subcategory.questions[selectedTab] | json}} -->
+  <md-card-content>
+    <md-tab-group [(selectedIndex)]="selectedTab">
+      <div *ngFor="let question of subcategory.questions">
+          <md-tab label={{question.question_id}} class="question-tab">
+            <app-question [question]="question" ></app-question>
+          </md-tab>
+      </div>
+    </md-tab-group>
+  </md-card-content>
+  <md-card-actions class="footer">
+    <button md-mini-fab (click)="before()"><md-icon>navigate_before</md-icon></button>
+    <button md-mini-fab color="primary" (click)="showAnswer()"><md-icon>check</md-icon></button>
+    <button md-mini-fab color="warn" (click)="markforreview()"><md-icon>bookmark</md-icon></button>
+    <button md-mini-fab (click)="next()"><md-icon>navigate_next</md-icon></button>
+  </md-card-actions>
+  <md-card-footer>
+
+  </md-card-footer>
+</md-card>

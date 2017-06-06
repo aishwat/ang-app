@@ -42,10 +42,11 @@
   </md-toolbar>
 
   <div class="main-content">
-    <button md-button (click)="sidenav.open()">
+    <!-- <button md-button (click)="sidenav.open()">
       Main content
-    </button>
-    <app-question *ngIf="selectedSubcategory" [question]="selectedSubcategory.questions[0]"></app-question>
+    </button> -->
+    <app-questions-container *ngIf="selectedSubcategory" [subcategory]="selectedSubcategory"></app-questions-container>
+    <!-- <app-question *ngIf="selectedSubcategory" [question]="selectedSubcategory.questions[0]"></app-question> -->
   </div>
 
 </md-sidenav-container>

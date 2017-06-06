@@ -15,10 +15,15 @@ export class QuestionComponent implements OnInit {
   }
 
   @Input() question: Question;
-
   selectedOption:Option;
+
   optionClicked(option:Option):void{
     this.selectedOption = option;
   }
-
+  // showAnswer():void{
+  //   for(let option of this.question.options){
+  //     if(option.isAns)
+  //       this.selectedOption = option;
+  //   }
+  // }
 }
