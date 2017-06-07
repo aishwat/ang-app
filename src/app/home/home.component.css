@@ -15,7 +15,7 @@
 .container{}
 
 .user-avatar {
-  background-image: url('../../assets/shiba1.jpg');
+  /*background-image: url('../../assets/avatars/png/user-16.png');*/
   background-size: cover;
 }
 .user-name{

@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import {Subcategory} from '../models/subcategory';
 import {QuestionComponent} from '../question/question.component';
 import {MdSnackBar,MdSnackBarConfig} from '@angular/material';
+import {SubcategoryService} from '../home/home.component';
 
 @Component({
   selector: 'app-questions-container',
@@ -10,9 +11,17 @@ import {MdSnackBar,MdSnackBarConfig} from '@angular/material';
 })
 export class QuestionsContainerComponent implements OnInit {
 
-  constructor(public snackBar: MdSnackBar) { }
-  @Input() subcategory: Subcategory;
+  constructor(
+    public snackBar: MdSnackBar,
+    private  subcategoryService:SubcategoryService
+  ) {
+    console.log("in constructor");
+    console.log(subcategoryService.subcategory);
+  }
+
+  subcategory: Subcategory;
   ngOnInit() {
+    this.subcategory=this.subcategoryService.subcategory;
   }
 
   showAnswer():void{

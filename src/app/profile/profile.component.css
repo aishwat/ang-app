@@ -1,0 +1,15 @@
+.profile-card{
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-width{
+  width: 100%;
+}
+.signup-btn{
+  margin-top: 15px;
+}
+.margin-bottom{
+  margin-bottom: 15px;
+}

@@ -21,7 +21,6 @@ export class SignupComponent implements OnInit {
   user  = new User(0,"firstname","lastname","abc@gmail.com","pass123"); //same object gets filled on success call
   signup_response : SignupResponse;
   submitted = false;
-  signu
 
   onSubmit() {
     this.submitted = true;

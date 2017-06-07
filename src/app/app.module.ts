@@ -25,6 +25,9 @@ import { QuestionsContainerComponent } from './questions-container/questions-con
 import { MaterialModule } from '@angular/material';
 import { ReportComponent } from './report/report.component';
 
+import { ChartsModule } from 'ng2-charts';
+import { ProfileComponent } from './profile/profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,8 @@ import { ReportComponent } from './report/report.component';
     HomeComponent,
     QuestionComponent,
     QuestionsContainerComponent,
-    ReportComponent
+    ReportComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ import { ReportComponent } from './report/report.component';
     HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule
+    MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule ,
+    ChartsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
