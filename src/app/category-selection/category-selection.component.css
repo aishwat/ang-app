@@ -1,0 +1,14 @@
+
+md-grid-tile {
+  /*background: lightblue;*/
+}
+
+md-grid-list{
+  min-height: 400px;
+}
+.tile-button{
+  height: 80%;
+  width:80%;
+  line-height: normal;
+  white-space: normal;
+}

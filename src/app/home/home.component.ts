@@ -1,9 +1,11 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, OnDestroy } from '@angular/core';
 import {User} from '../models/user';
-import {PracticeCategories} from '../mock/practice-categories';
+import {PracticeSet1} from '../mock/practice-set-1';
 import {Category} from '../models/category';
+import {Categories} from '../models/categories';
 import {Subcategory} from '../models/subcategory';
 import {Router} from '@angular/router';
+import {CategoriesService} from '../services/categories.service';
 
 @Injectable()
 export class SubcategoryService {
@@ -14,14 +16,15 @@ export class SubcategoryService {
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers :[SubcategoryService]
+  providers :[SubcategoryService,CategoriesService]
 })
 
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit,OnDestroy {
 
   user  = new User(0,"Frank","Underwood","abc@gmail.com","");
-  practice_categories:Category[] = PracticeCategories;
+
+  categories:Category[] ;// = this.categoriesService.getCategories().category_list;
 
   selectedCategory:string;
   selectedSubcategory:Subcategory;// = PracticeCategories[0].subcategories[0];//for test
@@ -44,12 +47,25 @@ export class HomeComponent implements OnInit {
   navigateToProfile():void{
     this.router.navigate(['/home/profile']);
   }
+  navigateToHome():void{
+    this.router.navigate(['/home/selection']);
+  }
 
   constructor(
     private router: Router,
-    private subcategoryService:SubcategoryService
+    private subcategoryService:SubcategoryService,
+    private categoriesService:CategoriesService
   ){}
+
+  subscription: any;
   ngOnInit() {
+    this.subscription = this.categoriesService.getCategoriesChangeEmitter()
+      .subscribe(categories => {
+        this.categories = categories.category_list;
+      });
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
   //expect user
   //expect categories

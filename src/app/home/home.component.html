@@ -17,7 +17,11 @@
 
             <md-list>
                 <md-divider></md-divider>
-                <div  *ngFor="let category of practice_categories">
+                  <md-list-item (click)="navigateToHome();sidenav.close();">
+                    <a md-line>Home</a>
+                  </md-list-item>
+                <md-divider></md-divider>
+                <div  *ngFor="let category of categories">
                     <md-list-item (click)="onSelectCategory(category.category)">
                       <a md-line>{{category.category}}</a>
                         <md-icon *ngIf="selectedCategory!=category.category">arrow_drop_down</md-icon>
@@ -52,7 +56,7 @@
     <button md-icon-button (click)="sidenav.open()">
         <md-icon>menu</md-icon>
     </button>
-    <a href="/home" style="color:#fff;text-decoration:none;">Enterprise Name</a>
+    <a href="/home/selection" style="color:#fff;text-decoration:none;">Enterprise Name</a>
   </md-toolbar>
 
   <div class="main-content">

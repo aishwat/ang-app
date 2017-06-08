@@ -5,6 +5,7 @@ import { LandingComponent }      from './landing/landing.component';
 import { ReportComponent }      from './report/report.component';
 import { QuestionsContainerComponent }      from './questions-container/questions-container.component';
 import { ProfileComponent }      from './profile/profile.component';
+import {CategorySelectionComponent} from './category-selection/category-selection.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,8 +14,12 @@ const routes: Routes = [
     children:[
       {
         path: '',
-        redirectTo: '/home',
+        redirectTo: 'selection',
         pathMatch: 'full'
+      },
+      {
+        path: 'selection',
+        component: CategorySelectionComponent
       },
       {
         path: 'report',

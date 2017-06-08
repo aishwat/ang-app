@@ -1,4 +1,5 @@
 import {Subcategory} from './subcategory';
+
 export class Category {
   constructor(
     public category_id : string,

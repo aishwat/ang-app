@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule} from '@angular/material';
+import {MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule, MdGridListModule} from '@angular/material';
 import {MdIconRegistry} from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,6 +27,7 @@ import { ReportComponent } from './report/report.component';
 
 import { ChartsModule } from 'ng2-charts';
 import { ProfileComponent } from './profile/profile.component';
+import { CategorySelectionComponent } from './category-selection/category-selection.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProfileComponent } from './profile/profile.component';
     QuestionComponent,
     QuestionsContainerComponent,
     ReportComponent,
-    ProfileComponent
+    ProfileComponent,
+    CategorySelectionComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule ,
+    MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule ,MdGridListModule,
     ChartsModule
   ],
   providers: [AuthService],
