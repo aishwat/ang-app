@@ -8,7 +8,7 @@ import { ProfileComponent }      from './profile/profile.component';
 import {CategorySelectionComponent} from './category-selection/category-selection.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home/selection', pathMatch: 'full' },
   { path: 'landing',  component: LandingComponent },
   { path: 'home', component: HomeComponent,
     children:[

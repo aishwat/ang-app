@@ -28,6 +28,10 @@ import { ReportComponent } from './report/report.component';
 import { ChartsModule } from 'ng2-charts';
 import { ProfileComponent } from './profile/profile.component';
 import { CategorySelectionComponent } from './category-selection/category-selection.component';
+import { PaymentComponent } from './payment/payment.component';
+
+import { WindowRef } from './WindowRef';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +47,8 @@ import { CategorySelectionComponent } from './category-selection/category-select
     QuestionsContainerComponent,
     ReportComponent,
     ProfileComponent,
-    CategorySelectionComponent
+    CategorySelectionComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,7 @@ import { CategorySelectionComponent } from './category-selection/category-select
     MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, MdSidenavModule, MdIconModule, MdListModule, MdTabsModule ,MdGridListModule,
     ChartsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

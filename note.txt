@@ -4,7 +4,7 @@ Things left to do
   - default category
 *2. Make Category selection page
 3. Update profile with server
-4. Add Payment Page
+*4. Add Payment Page
 5. Link Report to actual stats
 6. Upload categories, tests
 7. "Complete test" or "done" button

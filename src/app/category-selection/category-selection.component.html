@@ -13,4 +13,19 @@
       </button>
     </md-grid-tile>
   </div>
+  <div *ngFor="let categories  of paid_test_categories.categories_list;">
+    <md-grid-tile class="tile">
+      <button class="tile-button" md-raised-button color="warn" (click)="paid_test_categories_list_clicked(categories)">
+        {{categories.category_list_name}}
+      </button>
+    </md-grid-tile>
+  </div>
 </md-grid-list>
+<md-card *ngIf="showPayCard">
+  <!-- <md-card-title>Payemnt</md-card-title> -->
+  <md-card-title>{{selected_categories.category_list_name}}</md-card-title>
+  <md-card-content>Covers extra practice material for category test, to give you an edge </md-card-content>
+  <!-- <md-card-actions> -->
+  <app-payment></app-payment>
+  <!-- </md-card-actions> -->
+</md-card>
