@@ -7,8 +7,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AuthService {
 
-  private loginUrl = 'http://localhost:3000/login';
-  private signupUrl= 'http://localhost:3000/signup';
+  private loginUrl = '/login';
+  private signupUrl= '/signup';
 
   constructor(private http:Http){
 

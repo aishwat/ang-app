@@ -28,6 +28,7 @@ export class SignupComponent implements OnInit {
     this.authService.signup(this.user).then(signup_response => {
       this.signup_response=signup_response;
       console.log(this.signup_response);
+      alert("Mail sent");
       this.router.navigate(['/']);
     });
   }
